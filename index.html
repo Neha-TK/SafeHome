@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SafeHome - Your Secure Sanctuary</title>
+  <link rel="stylesheet" href="stylenew.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i data-lucide="home" class="logo-icon"></i>
+        <span>SafeHome</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#community">Community</a>
+        <a href="#stories">Success Stories</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="mobile-menu-btn">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>"You Matter. You're Safe."</h1>
+      <p>"The world is better with you in it. Your story isn’t over yet—this pain is just a chapter, not the whole book. Hold on, because brighter pages are ahead."
+
+      </p>
+      <button class="cta-button" id="openAIChat">
+        <i data-lucide="bot" class="mr-2"></i>
+        Chat with SafeHome AI
+      </button>
+    </div>
+  </section>
+
+  <!-- AI Chat Interface -->
+  <div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+      <div class="chat-title">
+        <i data-lucide="chat" class="chat-bot-icon"></i>
+        <span>SafeHome AI Assistant</span>
+      </div>
+      <button class="chat-close" id="closeChat">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        <i data-lucide="chat" class="message-avatar"></i>
+        <div class="message-content">
+          Hello! I'm your SafeHome AI assistant. How can I help you today?
+        </div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Type your message..." />
+      <button id="sendMessage">
+        <i data-lucide="send"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section id="features" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Features</h2>
+        <p>Empowering you with the tools and resources to create a safer, independent future.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="log-out"></i>
+          </div>
+          <a href="todolist.html"><h3>Escape Plan</h3>
+          <p>Plan your safe exit with our step-by-step guide and discreet tools to protect yourself.</p></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="home"></i>
+          </div>
+          <a href="shelter.html"><h3>Find a Shelter</h3>
+          <p>Locate trusted shelters and safe houses near you to ensure your immediate safety.</p></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="dollar-sign"></i>
+          </div>
+         <a href="finance.html"> <h3>Manage Finance</h3>
+          <p>Take control of your finances with budgeting tools and guidance to rebuild your future.</p>
+        </div></a>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="phone"></i>
+          </div>
+          <h3>Helpline</h3>
+          <p>Access our 24/7 helpline to connect with support services, legal aid, and emergency assistance.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="briefcase"></i>
+          </div>
+          <a href="job.html"><h3>Get a Job</h3>
+          <p>Discover job opportunities and career resources designed to empower and inspire you.</p></a>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <i data-lucide="book"></i>
+          </div>
+          <h3>Learn Skills</h3>
+          <p>Enhance your independence with training programs and skill-building courses tailored for you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- Community Section -->
+  <section id="community" class="community">
+    <div class="container">
+      <div class="section-header">
+        <h2>Community Support</h2>
+        <p>Join our compassionate community where you can share your journey, receive advice, and find strength together.</p>
+      </div>
+
+      <div class="carousel">
+        <button class="carousel-btn prev">
+          <i data-lucide="chevron-left"></i>
+        </button>
+        
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="img1.jpg" alt="Support Group">
+              <h3>Support Groups</h3>
+              <p>Connect with others who understand your journey and share valuable insights.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="img2.jpg" alt="Community Events">
+              <h3>Community Events</h3>
+              <p>Participate in workshops and events designed to empower and educate.</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="img3.jpg" alt="Peer Mentoring">
+              <h3>Peer Mentoring</h3>
+              <p>Find mentors who have navigated similar challenges and emerged stronger.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn next">
+          <i data-lucide="chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section (Placeholder) -->
+  <section id="stories" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Success Stories</h2>
+        <p>Read inspiring stories from women who have reclaimed their lives and built a brighter future.</p>
+      </div>
+      <!-- Success stories content can be added here -->
+    </div>
+  </section>
+
+  <!-- Contact Section (Placeholder) -->
+  <section id="contact" class="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for support, information, or to share your story.</p>
+      </div>
+      <!-- A contact form or contact details can be added here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <div class="logo">
+            <i data-lucide="home" class="logo-icon"></i>
+            <span>SafeHome</span>
+          </div>
+          <p>Providing discreet support and a safe haven for women seeking a better tomorrow.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#stories">Success Stories</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i data-lucide="map-pin"></i> 123 SafeHome Blvd</li>
+            <li><i data-lucide="phone"></i> (555) 987-6543</li>
+            <li><i data-lucide="mail"></i> support@safehome.org</li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 SafeHome. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Carousel functionality
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.carousel-btn.next');
+    const prevButton = document.querySelector('.carousel-btn.prev');
+    let currentIndex = 0;
+
+    function updateSlidePosition() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlidePosition();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateSlidePosition();
+    });
+
+    // Auto-advance carousel
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateSlidePosition();
+    }, 5000);
+
+    // Chat functionality
+    const chatContainer = document.getElementById('chatContainer');
+    const openChatBtn = document.getElementById('openAIChat');
+    const closeChatBtn = document.getElementById('closeChat');
+    const userInput = document.getElementById('userInput');
+    const sendMessageBtn = document.getElementById('sendMessage');
+    const chatMessages = document.getElementById('chatMessages');
+
+    // Sample responses for demo
+    const botResponses = {
+      default: "I understand you're looking for support. Could you please provide more details about how we can assist you?",
+      greetings: "Hello! How can I assist you today?",
+      help: "Our helpline is available 24/7 to support you. Please call (555) 987-6543 for immediate assistance.",
+    };
+
+    function addMessage(content, isBot = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${isBot ? 'bot' : 'user'}`;
+      
+      if (isBot) {
+        const avatar = document.createElement('i');
+        avatar.setAttribute('data-lucide', 'chat');
+        avatar.className = 'message-avatar';
+        messageDiv.appendChild(avatar);
+      }
+
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'message-content';
+      contentDiv.textContent = content;
+      messageDiv.appendChild(contentDiv);
+
+      chatMessages.appendChild(messageDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      lucide.createIcons();
+    }
+
+    function getBotResponse(message) {
+      const lowerMessage = message.toLowerCase();
+      if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
+        return botResponses.greetings;
+      } else if (lowerMessage.includes('help')) {
+        return botResponses.help;
+      }
+      return botResponses.default;
+    }
+
+    function handleUserMessage() {
+      const message = userInput.value.trim();
+      if (message) {
+        addMessage(message, false);
+        userInput.value = '';
+        
+        // Simulate bot typing
+        setTimeout(() => {
+          const response = getBotResponse(message);
+          addMessage(response, true);
+        }, 1000);
+      }
+    }
+
+    openChatBtn.addEventListener('click', () => {
+      chatContainer.classList.add('active');
+    });
+
+    closeChatBtn.addEventListener('click', () => {
+      chatContainer.classList.remove('active');
+    });
+
+    sendMessageBtn.addEventListener('click', handleUserMessage);
+
+    userInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        handleUserMessage();
+      }
+    });
+  </script>
+</body>
+</html>

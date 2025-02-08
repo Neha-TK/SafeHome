@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Delights - Homemade Recipes</title>
+  <link rel="stylesheet" href="loginmain.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i data-lucide="cake" class="logo-icon"></i>
+        <span>Sweet Delights</span>
+      </div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="login-btn" id="loginBtn" onclick="window.location.href='login.html'">
+          <i data-lucide="user" class="login-icon"></i>
+          Login
+        </button>
+      </div>
+      <button class="mobile-menu-btn">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover the Joy of Baking</h1>
+      <p>Explore our collection of delicious homemade recipes</p>
+      <div class="search-bar">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" placeholder="Search for recipes...">
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Recipes -->
+  <section class="featured-recipes">
+    <div class="container">
+      <h2>Featured Recipes</h2>
+      <div class="recipe-grid">
+        <div class="recipe-card">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="Chocolate Cake">
+          <div class="recipe-content">
+            <h3>Triple Chocolate Cake</h3>
+            <div class="recipe-meta">
+              <span><i data-lucide="clock"></i> 60 mins</span>
+              <span><i data-lucide="utensils"></i> 12 servings</span>
+            </div>
+            <p>Rich, moist chocolate cake with ganache filling and chocolate buttercream.</p>
+            <button class="view-recipe">View Recipe</button>
+          </div>
+        </div>
+
+        <div class="recipe-card">
+          <img src="cheesecake.jpg" alt="Cheese Cake">
+          <div class="recipe-content">
+            <h3>Cheese Cake</h3>
+            <div class="recipe-meta">
+              <span><i data-lucide="clock"></i> 45 mins</span>
+              <span><i data-lucide="utensils"></i> 16 servings</span>
+            </div>
+            <p>Dense, rich brownies with a crackly top and gooey center.</p>
+            <button class="view-recipe">View Recipe</button>
+          </div>
+        </div>
+
+        <div class="recipe-card">
+          <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" alt="Vanilla Cupcakes">
+          <div class="recipe-content">
+            <h3>Vanilla Bean Cupcakes</h3>
+            <div class="recipe-meta">
+              <span><i data-lucide="clock"></i> 30 mins</span>
+              <span><i data-lucide="utensils"></i> 12 servings</span>
+            </div>
+            <p>Light and fluffy cupcakes with vanilla buttercream frosting.</p>
+            <button class="view-recipe">View Recipe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories">
+    <div class="container">
+      <h2>Browse by Category</h2>
+      <div class="category-grid">
+        <a href="#" class="category-card">
+          <i data-lucide="cake" class="category-icon"></i>
+          <span>Cakes</span>
+        </a>
+        <a href="#" class="category-card">
+          <i data-lucide="cookie" class="category-icon"></i>
+          <span>Cookies</span>
+        </a>
+        <a href="#" class="category-card">
+          <i data-lucide="candy-cane" class="category-icon"></i>
+          <span>Brownies</span>
+        </a>
+        <a href="#" class="category-card">
+          <i data-lucide="ice-cream" class="category-icon"></i>
+          <span>Desserts</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Welcome Back!</h2>
+        <button class="close-modal" id="closeModal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <form class="login-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required>
+        </div>
+        <button type="submit" class="login-submit">Login</button>
+        <p class="signup-link">Don't have an account? <a href="login.html">Sign up</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Modal functionality
+    const loginBtn = document.getElementById('loginBtn');
+    const loginModal = document.getElementById('loginModal');
+    const closeModal = document.getElementById('closeModal');
+
+    loginBtn.addEventListener('click', () => {
+      loginModal.classList.add('active');
+    });
+
+    closeModal.addEventListener('click', () => {
+      loginModal.classList.remove('active');
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === loginModal) {
+        loginModal.classList.remove('active');
+      }
+    });
+
+    // Form submission
+    const loginForm = document.querySelector('.login-form');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Add login logic here
+      console.log('Login submitted');
+    });
+  </script>
+</body>
+</html>
+

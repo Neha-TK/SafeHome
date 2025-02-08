@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Planning List</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-reset {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .btn-exit {
+            background-color: #ff4444;
+            color: white;
+        }
+
+        .alert {
+            background-color: #e7f3ff;
+            border: 1px solid #b3d7ff;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            color: #004085;
+        }
+
+        .category {
+            margin-bottom: 30px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .category-title {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .task {
+            display: flex;
+            align-items: flex-start;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .task:hover {
+            background-color: #f5f5f5;
+        }
+
+        .task input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        .task-text {
+            flex: 1;
+        }
+
+        .task input[type="checkbox"]:checked + .task-text {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+
+            .category {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="title">Personal Planning List</h1>
+        <div class="button-group">
+            <button class="btn btn-reset" onclick="resetTasks()">Reset</button>
+            <button class="btn btn-exit" onclick="quickExit()">Exit</button>
+        </div>
+    </div>
+
+    <div class="alert">
+        Press ESC key or click the exit button to quickly leave this page.
+        Your progress is saved automatically.
+    </div>
+
+    <div class="category">
+        <h2 class="category-title">Gather Important Documents</h2>
+        <div class="task">
+            <input type="checkbox" id="task1">
+            <label class="task-text" for="task1">Personal ID (Passport, Aadhar, Birth Certificate)</label>
+        </div>
+        <div class="task">
+            <input type="checkbox" id="task2">
+            <label class="task-text" for="task2">Bank cards & emergency cash</label>
+        </div>
+        <div class="task">
+            <input type="checkbox" id="task3">
+            <label class="task-text" for="task3">Legal documents (Marriage certificate, restraining order, medical records)</label>
+        </div>
+        <div class="task">
+            <input type="checkbox" id="task4">
+            <label class="task-text" for="task4">Pack a small bag with clothes, medicines, and phone charger</label>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2 class="category-title">Plan Exit Strategy</h2>
+        <div class="task">
+            <input type="checkbox" id="task5">
+            <label class="task-text" for="task5">Identify a safe place to go (shelter, friend, trusted location)</label>
+        </div>
+        <div class="task">
+            <input type="checkbox" id="task6">
+            <label class="task-text" for="task6">Plan a safe route & transport (public transport, trusted contact)</label>
+        </div>
+        <div class="task">
+            <input type="checkbox" id="task7">
+            <label class="task-text" for="task7">Keep an emergency bag hidden & ready</label>
+        </div>
+    </div>
+
+    <div class="category">
+        <h2 class="category-title">Secure Communication</h2>
+        <div class="task">
+            <input type="checkbox" id="task8">
+            <label class="task-text" for="task8">Get a backup phone or SIM card</label>
+        </div>
+        <div class="task">
+            <input type="checkbox" id="task9">
+            <label class="task-text" for="task9">Change passwords for email, banking & social media</label>
+        </div>
+        <div class="task">
+            <input type="checkbox" id="task10">
+            <label class="task-text" for="task10">Disable location tracking & clear browsing history</label>
+        </div>
+    </div>
+
+    <script>
+        // Save checkbox states to localStorage
+        function saveCheckboxStates() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const states = Array.from(checkboxes).map(checkbox => checkbox.checked);
+            localStorage.setItem('checkboxStates', JSON.stringify(states));
+        }
+
+        // Load checkbox states from localStorage
+        function loadCheckboxStates() {
+            const states = JSON.parse(localStorage.getItem('checkboxStates'));
+            if (states) {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach((checkbox, index) => {
+                    checkbox.checked = states[index];
+                });
+            }
+        }
+
+        // Reset all tasks
+        function resetTasks() {
+            if (confirm('Are you sure you want to reset all progress?')) {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => checkbox.checked = false);
+                saveCheckboxStates();
+            }
+        }
+
+        // Quick exit function
+        function quickExit() {
+            window.location.href = 'index2.html'; // Redirect to index2.html
+        }
+
+        // Add event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCheckboxStates();
+            
+            // Save state when checkboxes change
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', saveCheckboxStates);
+            });
+
+            // Add ESC key listener
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    quickExit();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
